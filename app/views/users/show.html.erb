@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <p id="notice"><%= notice %></p>
+
+    <div>
+      <p><span>First Name:</span> <%= @user.first_name %></p>
+      <p><span>Last Name:</span> <%= @user.last_name %></p>
+      <p><span>Phone Number:</span> <%= @user.phone %></p>
+      <p><span>Email:</span> <%= @user.email %></p>
+
+      <% @user.dog.each do |dog| %>
+        <p><span>Dog ID:</span> <%= dog.id %></p>
+        <span><%= link_to 'Show Dog', dog %></span>
+        <span><%= link_to 'Edit Dog', edit_dog_path(dog) %></span>
+        <span><%= link_to 'Destroy Dog', dog, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+      <% end %>
+    </div>
+
+
+    <div>
+      <span><%= link_to 'Edit', edit_user_path(@user) %></span>
+      <span><%= link_to 'Back', users_path %></span>
+    </div>
+
+  </body>
+
+</html>
+
+
+
+
+
+
+<!--
+<p id="notice"><#%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <#%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <#%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <#%= @user.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <#%= @user.email %>
+</p>
+
+<#%= link_to 'Edit', edit_user_path(@user) %> |
+<#%= link_to 'Back', users_path %> -->

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <p id="notice"><%= notice %></p>
+
+    <div>
+      <% if @dog.image? %>
+        <p><%= image_tag @dog.image.small.url %></p>
+      <% end %>
+      <p><span>Dog ID:</span> <%= @dog.id %></p>
+      <p><span>Status:</span> <%= @dog.list.status %></p>
+      <p><span>Breed:</span> <%= @dog.breed %></p>
+      <p><span>Color:</span> <%= @dog.color %></p>
+      <p><span>Size:</span> <%= @dog.size %></p>
+      <p><span>Location:</span> <%= @dog.location %></p>
+      <p><span>Date:</span> <%= @dog.date.strftime("%m/%d/%Y") %></p>
+      <p><span>Description:</span> <%= @dog.description %></p>
+      <p><span>First Name:</span> <%= @dog.user.first_name %></p>
+      <p><span>Last Name:</span> <%= @dog.user.last_name %></p>
+      <p><span>Phone Number:</span> <%= @dog.user.phone %></p>
+      <p><span>Email:</span> <%= @dog.user.email %></p>
+    </div>
+
+
+    <div>
+    <span><%= link_to 'Edit', edit_dog_path(@dog) %></span>
+    <span><%= link_to 'Back', dogs_path %></span>
+    <span><%= link_to 'Delete', @dog, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <span><%= link_to 'Back To List', lists_path %></span>
+    </div>
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------
+<p id="notice"><#%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <#%= @dog.image %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <#%= @dog.breed %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <#%= @dog.color %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <#%= @dog.size %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <#%= @dog.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <#%= @dog.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <#%= @dog.description %>
+</p>
+
+<p>
+  <strong>List:</strong>
+  <#%= @dog.list %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <#%= @dog.user %>
+</p>
+
+<#%= link_to 'Edit', edit_dog_path(@dog) %> |
+<#%= link_to 'Back', dogs_path %> -->

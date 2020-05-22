@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+
+    <h1><%= @list.status %> List</h1>
+
+    <p> Status: <%= @list.status %></p>
+
+
+    <% @list.dog.each do |list| %>
+
+
+      <% if list.image? %>
+        <p>Image: <%= image_tag list.image.small.url %></p>
+      <% end %>
+
+      <p> Dog ID: <%= list.id %></p>
+      <p> Breed: <%= list.breed %></p>
+      <p> Color: <%= list.color %></p>
+      <p> Size: <%= list.size %></p>
+      <p> Location: <%= list.location %></p>
+      <p> Date: <%= list.date.strftime("%m/%d/%Y") %></p>
+      <p> Description: <%= list.description %></p>
+
+      <%= link_to 'Show Dog', list %> |
+      <%= link_to 'Edit Dog', edit_dog_path(list) %> |
+      <%= link_to 'Destroy Dog', list, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% end %>
+
+
+    <span><%= link_to 'Edit', edit_list_path(@list) %></span> |
+    <span><%= link_to 'Back To List', lists_path %></span>
+    <span><%= link_to 'Destroy', @list, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+    <div>
+      <p>Website by Cindy Mendes</p>
+    </div>
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p id="notice"><#%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <#%= @list.status %>
+</p>
+
+<#%= link_to 'Edit', edit_list_path(@list) %> |
+<#%= link_to 'Back', lists_path %> -->
